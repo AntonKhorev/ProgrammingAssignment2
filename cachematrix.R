@@ -1,7 +1,6 @@
-## Put comments here that give an overall description of what your
-## functions do
+## Cached matrix inverse
 
-## Write a short comment describing this function
+## Makes a 'cache matrix' object with the matrix x
 makeCacheMatrix <- function(x = matrix()) {
 	xSolve=NULL
 	list(
@@ -24,14 +23,15 @@ makeCacheMatrix <- function(x = matrix()) {
 	)
 }
 
-## Write a short comment describing this function
-# I'm going to ignore extra arguments
-# example for original makeVector/cachemean functions
-# x=makeVector(c(1,2,3,NA))
-# y=makeVector(c(1,2,3,NA)) # identical vectors
-# cachemean(y,na.rm=T) # returns 2
-# cachemean(x) # returns NA
-# cachemean(y) # returns 2 - same vector, same call, different result
+## Returns the inverse of the 'cache matrix' object x
+## Calculates the inverse only on the first call
 cacheSolve <- function(x, ...) {
 	x$solve()
 }
+## I'm going to ignore extra arguments (...) because passing them to solve() may lead to unexpected results.
+## Example for original makeVector/cachemean functions:
+## x=makeVector(c(1,2,3,NA))
+## y=makeVector(c(1,2,3,NA)) # identical vectors
+## cachemean(y,na.rm=T) # returns 2
+## cachemean(x) # returns NA
+## cachemean(y) # returns 2 - same vector, same call, different result
