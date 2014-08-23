@@ -1,4 +1,9 @@
 ## Cached matrix inverse
+##
+## Example:
+## m=matrix(1:4,2,2)
+## mc=makeCacheMatrix(m)
+## cacheSolve(mc) # returns the inverse of m
 
 ## Makes a 'cache matrix' object with the matrix x
 makeCacheMatrix <- function(x = matrix()) {
